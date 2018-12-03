@@ -27,11 +27,18 @@
 
 
     function getContent() {
+        <!--获取内容-->
+        <!--本案列中使用这种方式-->
         var arr = [];
         arr.push("使用editor.getContent()方法可以获得编辑器的内容");
         arr.push("内容为：");
         arr.push(UE.getEditor('editor').getContent());
         alert(arr.join("\n"));
+        <!--或者-->
+        <!--如果将上面的富文本框嵌入程序则需要下面这段js获取富文本框内的内容，因为上面获取方式在嵌入时会丢失部分函数-->
+        var article_data = {};
+        article_data['content'] = ue["body"]["innerHTML"]
+
     }
 
 </script>
