@@ -12,3 +12,14 @@ Python3.6和tornado使用百度富文本编辑器示例，可以拖拽上传、�
         serverUrl: "/upload" // 服务器统一请求接口路径，更改为主程序中的编辑器调用的接口路由请求地址
         4.如果编辑器被遮挡则修改static/ueditor/ueditor.config.js文件中的zIndex : 900     //编辑器层级的基数,默认是900
         5.注意：富文本编辑接口没有设置安全项，容易被攻击，可以设置cookie或者token需要的查询手册
+        6.编辑器各种上传文件的命名、路径、文件类型控制，在static/ueditor/config.json文件中修改
+                     "imageActionName": "uploadimage",
+                    "imageFieldName": "upfile",
+                    "imageMaxSize": 2048000,
+                    "imageAllowFiles": [".png", ".jpg", ".jpeg", ".gif", ".bmp"],
+                    "imageCompressEnable": true,
+                    "imageCompressBorder": 1600,
+                    "imageInsertAlign": "none",
+                    "imageUrlPrefix": "http://mzzd.xyz/",
+                    "imagePathFormat": "static/upload/image/{yyyy}{mm}{dd}/{time}{rand:6}",
+        
